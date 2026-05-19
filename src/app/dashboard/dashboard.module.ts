@@ -9,8 +9,8 @@ from '@angular/forms';
 import { DashboardRoutingModule }
 from './dashboard-routing.module';
 
-import { Dashboard }
-from './dashboard';
+import { DashboardComponent } from './dashboard';
+
 
 import { SharedModule }
 from '../shared/shared.module';
@@ -19,7 +19,7 @@ from '../shared/shared.module';
 
   declarations: [
 
-    Dashboard
+    DashboardComponent
 
   ],
 

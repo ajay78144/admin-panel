@@ -13,16 +13,12 @@ from './sidebar/sidebar';
 import { Header }
 from './header/header';
 
-import { Loader }
-from './loader/loader';
-
 @NgModule({
 
   declarations: [
 
     Sidebar,
-    Header,
-    Loader
+    Header
 
   ],
 
@@ -36,8 +32,7 @@ from './loader/loader';
   exports: [
 
     Sidebar,
-    Header,
-    Loader
+    Header
 
   ]
 

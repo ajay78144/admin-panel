@@ -5,22 +5,20 @@ import {
   Routes
 } from '@angular/router';
 
-import { Dashboard }
-from './dashboard';
+import { DashboardComponent } from './dashboard';
 
+// 🌸 GUARD
 import { authGuard }
 from '../core/guards/auth-guard';
 
 const routes: Routes = [
 
   {
-
     path: 'dashboard',
 
-    component: Dashboard,
+    component: DashboardComponent,
 
     canActivate: [authGuard]
-
   }
 
 ];

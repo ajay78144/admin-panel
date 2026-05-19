@@ -6,17 +6,20 @@ import { AuthService }
 from '../../core/services/auth.service';
 
 @Component({
+
   selector: 'app-login',
 
   standalone: false,
 
   templateUrl: './login.html',
 
-  styleUrls: ['./login.css'],
+  styleUrls: ['./login.css']
+
 })
 
 export class Login {
 
+  // 🌸 VARIABLES
   email = '';
 
   password = '';
@@ -30,11 +33,12 @@ export class Login {
 
     private router: Router
 
-  ) {}
+  ){}
 
   // 🌸 LOGIN
   login(){
 
+    // 🌸 VALIDATION
     if(
       this.email == '' ||
       this.password == ''
@@ -50,6 +54,7 @@ export class Login {
 
     this.loading = true;
 
+    // 🌸 BODY
     const body = {
 
       email: this.email,
@@ -58,6 +63,7 @@ export class Login {
 
     };
 
+    // 🌸 API
     this.authService
     .login(body)
     .subscribe({
@@ -68,6 +74,7 @@ export class Login {
 
         this.loading = false;
 
+        // 🌸 SUCCESS
         if(res.success){
 
           // 🌸 SAVE LOGIN
@@ -76,6 +83,7 @@ export class Login {
             'true'
           );
 
+          // 🌸 SAVE USER
           localStorage.setItem(
             'user',
             JSON.stringify(res)
@@ -86,9 +94,9 @@ export class Login {
           );
 
           // 🌸 REDIRECT
-          this.router.navigateByUrl(
+          this.router.navigate([
             '/dashboard'
-          );
+          ]);
 
         }
 
@@ -103,7 +111,7 @@ export class Login {
 
       },
 
-      error:(err)=>{
+      error:(err:any)=>{
 
         console.log(err);
 

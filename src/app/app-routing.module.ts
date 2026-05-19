@@ -7,6 +7,7 @@ import {
 
 const routes: Routes = [
 
+  // 🌸 DEFAULT
   {
     path: '',
     redirectTo: 'login',

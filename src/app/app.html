@@ -1,1 +1,29 @@
-<router-outlet></router-outlet>
+<!-- 🌸 LOGIN PAGE -->
+<div *ngIf="!isLoginPage">
+
+  <!-- 🌸 SIDEBAR -->
+  <app-sidebar></app-sidebar>
+
+  <!-- 🌸 MAIN -->
+  <div class="main-layout">
+
+    <!-- 🌸 HEADER -->
+    <app-header></app-header>
+
+    <!-- 🌸 PAGE -->
+    <div class="page-content">
+
+      <router-outlet></router-outlet>
+
+    </div>
+
+  </div>
+
+</div>
+
+<!-- 🌸 AUTH PAGE -->
+<div *ngIf="isLoginPage">
+
+  <router-outlet></router-outlet>
+
+</div>

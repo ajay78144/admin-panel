@@ -7,17 +7,18 @@ import { CategoryService }
 from '../core/services/category.service';
 
 @Component({
+
   selector: 'app-dashboard',
 
   standalone: false,
 
   templateUrl: './dashboard.html',
 
-  styleUrls: ['./dashboard.css'],
+  styleUrls: ['./dashboard.css']
 
 })
 
-export class Dashboard {
+export class DashboardComponent {
 
   // 🌸 DATA
   totalImages = 0;
@@ -38,7 +39,6 @@ export class Dashboard {
 
   ){
 
-    // 🌸 LOAD
     this.getCategories();
 
     this.getImages();
@@ -51,8 +51,6 @@ export class Dashboard {
     this.categoryService
     .getCategories()
     .subscribe((res:any)=>{
-
-      console.log(res);
 
       this.totalCategories =
       res.length;
@@ -68,20 +66,15 @@ export class Dashboard {
     .getImages()
     .subscribe((res:any)=>{
 
-      console.log(res);
-
-      // 🌸 TOTAL
       this.totalImages =
       res.length;
 
-      // 🌸 TRENDING
       this.trendingImages =
       res.filter(
         (x:any)=>
-        x.trending === true
+        x.trending == true
       ).length;
 
-      // 🌸 LATEST
       this.latestImages =
       res.slice(0,6);
 

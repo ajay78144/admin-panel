@@ -3,34 +3,20 @@ import { NgModule } from '@angular/core';
 import { BrowserModule }
 from '@angular/platform-browser';
 
-import { App } from './app';
+import { App }
+from './app';
 
 import { AppRoutingModule }
 from './app-routing.module';
 
-import { HttpClientModule }
-from '@angular/common/http';
-
 import { FormsModule }
 from '@angular/forms';
 
-import { RouterModule }
-from '@angular/router';
+import { HttpClientModule }
+from '@angular/common/http';
 
-// 🌸 MODULES
-import { CategoryModule }
-from './category/category.module';
-
-import { AuthModule }
-from './auth/auth.module';
-
-import { ImageModule }
-from './image/image.module';
-
-import { DashboardModule }
-from './dashboard/dashboard.module';
-
-
+import { SharedModule }
+from './shared/shared.module';
 
 @NgModule({
 
@@ -44,21 +30,19 @@ from './dashboard/dashboard.module';
 
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule,
     FormsModule,
-    RouterModule,
-
-    // 🌸 CUSTOM MODULES
-    CategoryModule,
-    AuthModule,
-    ImageModule,
-    DashboardModule,
+    HttpClientModule,
+    SharedModule
 
   ],
 
   providers: [],
 
-  bootstrap: [App]
+  bootstrap: [
+
+    App
+
+  ]
 
 })
 
