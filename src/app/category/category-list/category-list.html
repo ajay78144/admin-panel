@@ -1,0 +1,99 @@
+<div class="page">
+
+  <!-- 🌸 TOP -->
+  <div class="top-bar">
+
+    <div>
+
+      <h2>
+        Category List
+      </h2>
+
+      <p>
+        Manage all mehndi categories
+      </p>
+
+    </div>
+
+    <button
+
+      routerLink="/add-category"
+
+      class="add-btn"
+    >
+
+      + Add Category
+
+    </button>
+
+  </div>
+
+  <!-- 🌸 LIST -->
+  <div class="list-box">
+
+    <!-- 🌸 ITEM -->
+    <div
+
+      class="item"
+
+      *ngFor="let item of categories"
+    >
+
+      <!-- 🌸 LEFT -->
+      <div class="left">
+
+        <img
+
+          [src]="item.image"
+
+          alt=""
+        />
+
+        <div class="info">
+
+          <h4>
+            {{item.name}}
+          </h4>
+
+          <p>
+            Mehndi Category
+          </p>
+
+        </div>
+
+      </div>
+
+      <!-- 🌸 ACTION -->
+      <div class="actions">
+
+        <!-- 🌸 EDIT -->
+        <button
+
+          class="edit-btn"
+
+          (click)="editCategory(item)"
+        >
+
+          Edit
+
+        </button>
+
+        <!-- 🌸 DELETE -->
+        <button
+
+          class="delete-btn"
+
+          (click)="deleteCategory(item._id)"
+        >
+
+          Delete
+
+        </button>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</div>

@@ -1,0 +1,101 @@
+<div class="login-page">
+
+  <!-- 🌸 LEFT -->
+  <div class="left">
+
+    <div class="overlay">
+
+      <h1>
+        Mehndi Admin
+      </h1>
+
+      <p>
+        Manage categories,
+        upload mehndi images
+        and control trending designs.
+      </p>
+
+    </div>
+
+  </div>
+
+  <!-- 🌸 RIGHT -->
+  <div class="right">
+
+    <div class="login-box">
+
+      <h2>
+        Welcome Back 👋
+      </h2>
+
+      <p>
+        Login to continue
+      </p>
+
+      <!-- 🌸 EMAIL -->
+      <div class="input-group">
+
+        <label>Email</label>
+
+        <input
+
+          type="email"
+
+          placeholder="Enter email"
+
+          [(ngModel)]="email"
+
+          name="email"
+        />
+
+      </div>
+
+      <!-- 🌸 PASSWORD -->
+      <div class="input-group">
+
+        <label>Password</label>
+
+        <input
+
+          type="password"
+
+          placeholder="Enter password"
+
+          [(ngModel)]="password"
+
+          name="password"
+        />
+
+      </div>
+
+      <!-- 🌸 BUTTON -->
+      <button
+
+        class="login-btn"
+
+        (click)="login()"
+
+      >
+
+        {{ loading ? 'Please Wait...' : 'Login' }}
+
+      </button>
+
+      <!-- 🌸 REGISTER -->
+      <p class="register-text">
+
+        Don't have account?
+
+        <span routerLink="/register">
+
+          Register
+
+        </span>
+
+      </p>
+
+    </div>
+
+  </div>
+
+</div>
